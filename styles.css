@@ -1,6 +1,7 @@
 :root {
   --primary-color: #073B4C;
-  --secondary-color: #198fb7 ;
+  --secondary-color: #198fb7;
+  --primary-yellow: #FFD166;
 }
 
 * {
@@ -10,7 +11,7 @@
 }
 
 body {
-  background-color: #FFD166;
+  background-color: var(--primary-yellow);
 }
 
 .header {
@@ -36,4 +37,159 @@ body {
 .header__img img {
   width: 81%;
   border-radius: 10px;
+}
+
+.main .dish {
+  margin-bottom: 100px;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  padding: 45px;
+  display: flex;
+  justify-content: space-between;
+}
+.main .dish__recipe button {
+  background-color: var(--primary-color);
+  color: var(--primary-yellow);
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.main .dish__recipe button a {
+  text-decoration: none;
+  color: var(--primary-yellow);
+}
+.main .dish__recipe button ::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: var(--primary-yellow);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+}
+.main .dish__recipe button :hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.9;
+}
+.main .dish__recipe button :hover {
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  color: var(--primary-color);
+}
+.main .dish__recipe button :active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s ease-out;
+  z-index: -1;
+}
+.main .dish__recipe button ::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.3s ease;
+}
+.main .dish__recipe button :hover::after {
+  left: 100%;
+  transition: all 0.5s ease;
+}
+.main .dish__text {
+  width: 50%;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 500px;
+}
+.main .dish__title {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 30px;
+}
+.main .dish__description, .main .dish__serving {
+  font-family: "Merriweather Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+}
+.main .dish__description p, .main .dish__serving p {
+  font-size: 20px;
+}
+.main .dish__img {
+  width: 324px;
+  height: 400px;
+  overflow: visible;
+  cursor: pointer;
+  position: relative;
+}
+.main .dish__img .description {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.main .dish__img .description p {
+  margin-bottom: 10px;
+}
+.main .dish__img .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotateZ(-5deg);
+}
+.main .dish__img .content__img {
+  max-width: 100%;
+}
+.main .dish__img::before,
+.main .dish__img .content {
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.133);
+  transition: transform 300ms, box-shadow 200ms;
+}
+.main .dish__img::before {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-yellow);
+  transform: rotateZ(5deg);
+}
+.main .dish__img:hover::before, .main .dish__img:hover .content {
+  transform: rotateZ(0deg);
+}
+.main .dish__img:active::before, .main .dish__img:active .content {
+  box-shadow: none;
 }/*# sourceMappingURL=styles.css.map */
