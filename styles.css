@@ -196,4 +196,21 @@ body {
 }
 .main .dish__img:active::before, .main .dish__img:active .content {
   box-shadow: none;
+}
+
+.footer {
+  background-color: var(--secondary-color);
+  margin: 100px auto;
+  border-radius: 30px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__text {
+  color: var(--primary-color);
+  font-family: "Roboto Slab", serif;
+  font-size: 25px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }/*# sourceMappingURL=styles.css.map */
