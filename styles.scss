@@ -1,6 +1,16 @@
-:root{
+:root {
     --primary-color: #073B4C;
     --secondary-color: #198fb7
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFD166;
 }
 
 .header {
